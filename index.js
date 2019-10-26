@@ -1,18 +1,3 @@
-const bookList = [
-    {
-        title: "book1",
-        description: "Eat That Frog by Brian Tracy",
-        about: "Some vonderfull books for children",
-        cover: "src/book_frog.jpg"
-    },
-    {
-        title: "book2",
-        description: "this book",
-        about: "Interesting book for adult",
-        cover: "src/book_how.jpg"
-    }
-]
-
 const div = document.querySelector('.container')
 const nav = document.querySelector('nav')
 
@@ -24,12 +9,12 @@ const title = document.createElement('h2')
 
 div.appendChild(title)
 
-const addElement = function (bookList) {
-    bookList.map(function (i) {
+const addElement = function (storage) {
+    storage.map(function (i) {
         const listElement = document.createElement('LI')
-        const listTitle = document.createTextNode(i.title)
+        const listTitle = document.createTextNode(i.author)
         listElement.classList.add('book-list')
-        listElement.dataset.index = bookList.indexOf(i)
+        listElement.dataset.index = storage.indexOf(i)
         listElement.appendChild(listTitle)
         list.appendChild(listElement)
 
@@ -38,18 +23,18 @@ const addElement = function (bookList) {
     })
 }
 
-addElement(bookList)
+addElement(storage)
 
 nav.appendChild(list).firstChild.classList.add('active')
 const creatContent = function (data) {
     div.innerHTML = `
-    <h2>${data.description}</h2>
+    <h2>${data.title}</h2>
     <p> ${data.about}</p>
     <img src="${data.cover}" alt="${data.title}" class="cover-book">
     `
 }
 
-creatContent(bookList[0])
+creatContent(storage[0])
 nav.addEventListener('click', event => {
     let navElement = event.target;
 
@@ -60,6 +45,6 @@ nav.addEventListener('click', event => {
         return;
     }
     navElement.classList.add('active');
-    let bookShop = bookList[navElement.dataset.index];
+    let bookShop = storage[navElement.dataset.index];
     creatContent(bookShop);
 });
