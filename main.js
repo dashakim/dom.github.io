@@ -78,6 +78,7 @@ nav.addEventListener('click', event => {
   if (navElement.tagName != 'LI') {
     return;
   }
+  
   navElement.classList.add('active');
   let books = storage[navElement.dataset.index];
   addContent(books);

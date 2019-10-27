@@ -11,7 +11,9 @@ li {
   list-style: none;
 }
 li{
-
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
   box-shadow: 0 0 1px rgb(0, 0, 0);
   padding:10px;
   margin: 10px;
@@ -26,16 +28,18 @@ li:hover{
 }
 h1 {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .content {
+  align-items: center;
+  flex-flow: row wrap;    
   display: flex;
-
   justify-content: center;
-  flex-flow: row wrap;
 
 }
-
 nav {
  
   display: flex;
@@ -52,17 +56,14 @@ ul {
 
 }
 
-img {
-  margin-left: 100px;
-  max-width: 20%;
-  height: auto;
-  order: 1;
-}
+
 
 
 p {
+  display: flex;
   max-width: 320px;
 
+margin: 0 0 0 0;
 }
 
 h2 {
@@ -78,3 +79,21 @@ h3 {
   align-items: center;
   text-align: center;
 }
+.content img {
+  width: 20%;
+  margin: 0 60px 0 20px;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center; 
+
+  height: 8vh;
+}
+
