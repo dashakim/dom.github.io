@@ -1,5 +1,5 @@
 
-const storage = [
+ const storage = [
     {
         author: 'Brian Tracy',
         title: 'Eat That Frog',

@@ -1,65 +1,40 @@
-const bookList = [
-    {
-        title: "book1",
-        description: "Eat That Frog by Brian Tracy",
-        about: "Some vonderfull books for children",
-        cover: "src/book_frog.jpg"
-    },
-    {
-        title: "book2",
-        description: "this book",
-        about: "Interesting book for adult",
-        cover: "src/book_how.jpg"
-    }
-]
-
-const div = document.querySelector('.container')
 const nav = document.querySelector('nav')
+const container = document.querySelector('.container')
+const bookList = document.createElement('UL')
+bookList.classList.add('book-list')
+nav.appendChild(bookList)
+const content = document.createElement('DIV')
+content.classList.add('content')
+container.appendChild(content)
 
-const list = document.createElement('UL')
 
-nav.appendChild(list)
 
-const title = document.createElement('h2')
-
-div.appendChild(title)
-
-const addElement = function (bookList) {
-    bookList.map(function (i) {
-        const listElement = document.createElement('LI')
-        const listTitle = document.createTextNode(i.title)
-        listElement.classList.add('book-list')
-        listElement.dataset.index = bookList.indexOf(i)
-        listElement.appendChild(listTitle)
-        list.appendChild(listElement)
-
-        listElement.insertAdjacentHTML("afterbegin", "<div class='some'>text</div>")
-      
+const createElement = function (data) {
+    data.map(function (el) {
+        const title = document.createElement('LI')
+        title.classList.add('book-item')
+        title.dataset.index = data.indexOf(el);
+        const name = document.createTextNode(el.author)
+        bookList.appendChild(title)
+        title.appendChild(name)
     })
 }
+createElement(storage)
 
-addElement(bookList)
-
-nav.appendChild(list).firstChild.classList.add('active')
-const creatContent = function (data) {
-    div.innerHTML = `
-    <h2>${data.description}</h2>
-    <p> ${data.about}</p>
-    <img src="${data.cover}" alt="${data.title}" class="cover-book">
-    `
+const addContent = function (data) {
+    container.innerHTML = `
+        <h2>${data.title}</h2>
+      <p>${data.about}</p>
+      <span> ${data.price}</span>
+      <img src="${data.cover}" alt="${data.title}" class="cover-book">
+      `
 }
+addContent(storage[0])
 
-creatContent(bookList[0])
-nav.addEventListener('click', event => {
-    let navElement = event.target;
-
-    if (document.querySelector('.active')) {
-        document.querySelector('.active').classList.remove('active');
-    }
-    if (navElement.tagName != 'LI') {
-        return;
-    }
-    navElement.classList.add('active');
-    let bookShop = bookList[navElement.dataset.index];
-    creatContent(bookShop);
-});
+bookList.onclick = function (event) {
+    let target = event.target // где был клик?
+    if (!target) return;
+    if (!bookList.contains(target)) return
+    let selected = storage[target.dataset.index];
+    addContent(selected)
+}

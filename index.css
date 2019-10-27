@@ -1,26 +1,18 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: rgb(32, 32, 32);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgb(131, 131, 131);
+    background-color: rgb(235, 235, 235);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(37, 37, 37);
 }
 
-h1{
-    text-align: center;
-}
-li{
+ul, li{
     list-style: none;
 }
-.some{
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
+
+li:hover{
+    background-color: rgba(180, 170, 170, 0.158);
 }
-img{
-    max-width: 720px;
-}
-main{
-    display: flex;
-    justify-content: space-around;
+li:active{
+    background-color: rgb(112, 77, 77);
 }
