@@ -1,3 +1,7 @@
+const nav = document.querySelector('nav')
+const div = document.querySelector('.container')
+const list = document.createElement('UL')
+nav.appendChild(list)
 
 const storage = [
   {

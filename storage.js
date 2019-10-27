@@ -1,5 +1,5 @@
 
-const storage = [
+ const storage = [
     {
         author: 'Brian Tracy',
         title: 'Eat That Frog',
@@ -7,13 +7,13 @@ const storage = [
         price: '$18.69 Hardcover',
         cover: 'src/book_frog.jpg'
     },
-    // {
-    //     author: "Chris Brogan and Julien Smith",
-    //     title: 'The Impact Equation by Chris Brogan and Julien Smith',
-    //     about: 'This is not another just another social media book but rather a book about connections and relationships. I always enjoy what Chris and Julien have to say and this book did not disappoint.  They have a way of writing that makes you feel like they totally get you, and are talking with you.  This was the perfect complement to Trust Agents which I also really enjoyed.',
-    //     price: '$5.89 Hardcover',
-    //     cover: 'src/book_impact.jpg'
-    // },
+    {
+        author: "Chris Brogan and Julien Smith",
+        title: 'The Impact Equation by Chris Brogan and Julien Smith',
+        about: 'This is not another just another social media book but rather a book about connections and relationships. I always enjoy what Chris and Julien have to say and this book did not disappoint.  They have a way of writing that makes you feel like they totally get you, and are talking with you.  This was the perfect complement to Trust Agents which I also really enjoyed.',
+        price: '$5.89 Hardcover',
+        cover: 'src/book_impact.jpg'
+    },
     {
         author: "Carol S. Dweck",
         title: 'Mindset: The New Psychology of Success',

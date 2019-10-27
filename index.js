@@ -1,50 +1,40 @@
-const div = document.querySelector('.container')
 const nav = document.querySelector('nav')
+const container = document.querySelector('.container')
+const bookList = document.createElement('UL')
+bookList.classList.add('book-list')
+nav.appendChild(bookList)
+const content = document.createElement('DIV')
+content.classList.add('content')
+container.appendChild(content)
 
-const list = document.createElement('UL')
 
-nav.appendChild(list)
 
-const title = document.createElement('h2')
-
-div.appendChild(title)
-
-const addElement = function (storage) {
-    storage.map(function (i) {
-        const listElement = document.createElement('LI')
-        const listTitle = document.createTextNode(i.author)
-        listElement.classList.add('book-list')
-        listElement.dataset.index = storage.indexOf(i)
-        listElement.appendChild(listTitle)
-        list.appendChild(listElement)
-
-        listElement.insertAdjacentHTML("afterbegin", "<div class='some'>text</div>")
-      
+const createElement = function (data) {
+    data.map(function (el) {
+        const title = document.createElement('LI')
+        title.classList.add('book-item')
+        title.dataset.index = data.indexOf(el);
+        const name = document.createTextNode(el.author)
+        bookList.appendChild(title)
+        title.appendChild(name)
     })
 }
+createElement(storage)
 
-addElement(storage)
-
-nav.appendChild(list).firstChild.classList.add('active')
-const creatContent = function (data) {
-    div.innerHTML = `
-    <h2>${data.title}</h2>
-    <p> ${data.about}</p>
-    <img src="${data.cover}" alt="${data.title}" class="cover-book">
-    `
+const addContent = function (data) {
+    container.innerHTML = `
+        <h2>${data.title}</h2>
+      <p>${data.about}</p>
+      <span> ${data.price}</span>
+      <img src="${data.cover}" alt="${data.title}" class="cover-book">
+      `
 }
+addContent(storage[0])
 
-creatContent(storage[0])
-nav.addEventListener('click', event => {
-    let navElement = event.target;
-
-    if (document.querySelector('.active')) {
-        document.querySelector('.active').classList.remove('active');
-    }
-    if (navElement.tagName != 'LI') {
-        return;
-    }
-    navElement.classList.add('active');
-    let bookShop = storage[navElement.dataset.index];
-    creatContent(bookShop);
-});
+bookList.onclick = function (event) {
+    let target = event.target // где был клик?
+    if (!target) return;
+    if (!bookList.contains(target)) return
+    let selected = storage[target.dataset.index];
+    addContent(selected)
+}
