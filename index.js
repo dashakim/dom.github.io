@@ -22,10 +22,9 @@ const createElement = function (data) {
 createElement(storage)
 
 const addContent = function (data) {
-    container.innerHTML = `
+    content.innerHTML = `
         <h2>${data.title}</h2>
-      <p>${data.about}</p>
-      <span> ${data.price}</span>
+      <p>${data.about}<br><br><strong>Price:${data.price}</strong></p>
       <img src="${data.cover}" alt="${data.title}" class="cover-book">
       `
 }

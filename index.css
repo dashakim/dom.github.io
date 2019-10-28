@@ -6,11 +6,12 @@
 
 html,
 body {
-    height: 100;
-    margin: 0;
+  /* / */
+  
     background-color: rgb(235, 235, 235);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(37, 37, 37);
+    margin:0 auto;
     text-align: center;
 }
 
@@ -19,8 +20,68 @@ ul, li{
 }
 
 li:hover{
-    background-color: rgba(180, 170, 170, 0.158);
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    
 }
 li:active{
-    background-color: rgb(112, 77, 77);
+    background-color: rgb(228, 228, 228);
+}
+
+.book-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0
+}
+
+.book-item{
+    border: 1px solid rgb(255, 255, 255);
+    padding: 19px;
+    /* margin: 10px; */
+    
+}
+.container{
+    max-width: 920px;
+    margin: 0 auto;
+   
+
+}
+h1{
+    display: block;
+    text-transform: uppercase;
+    padding: 20px 0 0 0;
+
+}
+.content{
+    text-align: center;
+    background-color: #fff;
+    padding: 10px 0 40px 0;
+}
+.content p{
+   float: left;
+   max-width: 520px;
+   text-align: justify;
+   margin-left: 50px;
+   padding: 0;
+   white-space: pre-wrap
+}
+@media(max-width:512px) {
+    .book-list{
+        /* display: flex; */
+        flex-direction: column;
+        justify-content: space-between;
+    }
+   .content p{
+        margin: 0;
+    }
+}
+
+@media(max-width:920px) {
+  .content p{
+     margin-left: 80px;
+  }
+    
 }
