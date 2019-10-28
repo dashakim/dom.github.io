@@ -3,14 +3,14 @@
     {
         author: 'Brian Tracy',
         title: 'Eat That Frog',
-        about: 'Want to do more than just get more done? How about get what matters done so that you are making quantum leaps in your business? This book makes too much sense and has changed the way I plan and prioritize my day.  Put it this way, I eat my frog in the morning, and I focus on the top three things that only I can do in my business a whole lot more.  Excellent read! (thanks Tonya Davidson for recommending).',
+        about: 'Mark Twain once said, “Eat a live frog first thing in the morning and nothing worse will happen to you the rest of the day.”<br> Want to do more than just get more done? How about get what matters done so that you are making quantum leaps in your business? This book makes too much sense and has changed the way I plan and prioritize my day.  Put it this way, I eat my frog in the morning, and I focus on the top three things that only I can do in my business a whole lot more.<br> Bestselling author Brian Tracy cuts to the core of what is vital to effective time management: decision, discipline, and determination. In this fully revised and updated second edition, he provides brand new information on how to keep technology from dominating your time. He details twenty-one practical and doable steps that will help you stop procrastinating and get more of the important tasks done—today!',
         price: '$18.69 Hardcover',
         cover: 'src/book_frog.jpg'
     },
     {
         author: "Chris Brogan and Julien Smith",
         title: 'The Impact Equation by Chris Brogan and Julien Smith',
-        about: 'This is not another just another social media book but rather a book about connections and relationships. I always enjoy what Chris and Julien have to say and this book did not disappoint.  They have a way of writing that makes you feel like they totally get you, and are talking with you.  This was the perfect complement to Trust Agents which I also really enjoyed.',
+        about: 'In The Impact Equation, Brogan and Smith show that to make people truly care about what you have to say, you need more than just a good idea, trust among your audience, or a certain number of fol­lowers. You need a potent mix of all of the above and more. The Impact Equation will give you the tools and metrics that guarantee your message will be heard.<br>Use the Impact Equation to figure out what you’re doing right and wrong. Apply it to a blog, a tweet, a video, or a mainstream-media advertising cam­paign. Use it to explain why a feature in a national newspaper that reaches millions might have less impact than a blog post that reaches a thousand passionate subscribers.',
         price: '$5.89 Hardcover',
         cover: 'src/book_impact.jpg'
     },

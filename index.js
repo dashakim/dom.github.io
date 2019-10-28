@@ -7,20 +7,21 @@ const content = document.createElement('DIV')
 content.classList.add('content')
 container.appendChild(content)
 
-
-
 const createElement = function (data) {
     data.map(function (el) {
         const title = document.createElement('LI')
         title.classList.add('book-item')
+
         title.dataset.index = data.indexOf(el);
         const name = document.createTextNode(el.author)
         bookList.appendChild(title)
         title.appendChild(name)
     })
 }
+
 createElement(storage)
 
+nav.appendChild(bookList).firstChild.classList.add('active')
 const addContent = function (data) {
     content.innerHTML = `
         <h2>${data.title}</h2>
@@ -28,12 +29,17 @@ const addContent = function (data) {
       <img src="${data.cover}" alt="${data.title}" class="cover-book">
       `
 }
+
 addContent(storage[0])
 
 bookList.onclick = function (event) {
     let target = event.target // где был клик?
     if (!target) return;
     if (!bookList.contains(target)) return
+    if (document.querySelector('.active')) {
+        document.querySelector('.active').classList.remove('active');
+    }
+    target.classList.add('active');
     let selected = storage[target.dataset.index];
     addContent(selected)
 }
